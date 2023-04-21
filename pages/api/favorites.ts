@@ -14,7 +14,7 @@ const {currentUser}=await serverAuth(req,res);
 const favouriteMovies=await prismadb.movie.findMany({
     where:{
         id:{
-            in:currentUser?.favouriteIds,
+            in:currentUser?.favoriteIds,
         }
     }
 })

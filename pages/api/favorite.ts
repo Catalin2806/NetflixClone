@@ -28,7 +28,7 @@ if(req.method ==='POST'){
             email:currentUser.email ||' ',
         },
         data:{
-            favouriteIds:{
+            favoriteIds:{
                 push:movieId,
             }
         }
@@ -52,14 +52,14 @@ if (!existingMovie){
     throw new Error('Invalid ID');
 }
 
-const updatedFavoriteIds=without(currentUser.favouriteIds,movieId);
+const updatedFavoriteIds=without(currentUser.favoriteIds,movieId);
 
 const updatedUser=await prismadb.user.update({
     where:{
         email:currentUser.email ||" ",
     },
     data:{
-        favouriteIds:updatedFavoriteIds,
+        favoriteIds:updatedFavoriteIds,
     }
 });
 

@@ -61,6 +61,7 @@ const Auth=()=>{
               onChange={(ev:any)=>setName(ev.target.value)}
               id="name"
               value={name}
+              type=""
               />  
               )}
               <Input
